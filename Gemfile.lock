@@ -41,6 +41,8 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    faraday (0.8.8)
+      multipart-post (~> 1.2.0)
     hike (1.2.1)
     i18n (0.6.1)
     journey (1.0.4)
@@ -54,9 +56,13 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.21)
+    mini_portile (0.5.1)
     minitest (4.6.2)
     multi_json (1.7.1)
+    multipart-post (1.2.0)
     mysql2 (0.3.11)
+    nokogiri (1.6.0)
+      mini_portile (~> 0.5.0)
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -128,9 +134,11 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  faraday
   jquery-rails
   minitest
   mysql2
+  nokogiri
   rack (~> 1.4.5)
   rails (~> 3.2.13)
   rspec
