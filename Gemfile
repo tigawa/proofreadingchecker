@@ -49,7 +49,7 @@ gem 'minitest'
 
 gem 'therubyracer'
 
-group :test do
+group :development, :test do
      gem "rspec"
      gem "rspec-rails"
 end
