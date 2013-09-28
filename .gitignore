@@ -15,3 +15,16 @@
 /log/*.log
 /tmp
 .project
+*.rbc
+*.sassc
+.sass-cache
+capybara-*.html
+.rspec
+/log/*
+/tmp/*
+/public/system/*
+/coverage/
+/spec/tmp/*
+**.orig
+rerun.txt
+pickle-email-*.html
