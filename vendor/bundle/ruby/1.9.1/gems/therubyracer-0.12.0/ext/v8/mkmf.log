@@ -1,0 +1,24 @@
+have_library: checking for main() in -lpthread... -------------------- yes
+
+"gcc -o conftest -I/home/igawa/.rbenv/versions/1.9.3-p362/include/ruby-1.9.1/i686-linux -I/home/igawa/.rbenv/versions/1.9.3-p362/include/ruby-1.9.1/ruby/backward -I/home/igawa/.rbenv/versions/1.9.3-p362/include/ruby-1.9.1 -I. -I'/home/igawa/.rbenv/versions/1.9.3-p362/include'  -D_FILE_OFFSET_BITS=64 -I'/home/igawa/.rbenv/versions/1.9.3-p362/include'   -O3 -ggdb -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -L/home/igawa/.rbenv/versions/1.9.3-p362/lib -Wl,-R/home/igawa/.rbenv/versions/1.9.3-p362/lib -L. -L'/home/igawa/.rbenv/versions/1.9.3-p362/lib'  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/home/igawa/.rbenv/versions/1.9.3-p362/lib -L/home/igawa/.rbenv/versions/1.9.3-p362/lib -lruby-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"gcc -o conftest -I/home/igawa/.rbenv/versions/1.9.3-p362/include/ruby-1.9.1/i686-linux -I/home/igawa/.rbenv/versions/1.9.3-p362/include/ruby-1.9.1/ruby/backward -I/home/igawa/.rbenv/versions/1.9.3-p362/include/ruby-1.9.1 -I. -I'/home/igawa/.rbenv/versions/1.9.3-p362/include'  -D_FILE_OFFSET_BITS=64 -I'/home/igawa/.rbenv/versions/1.9.3-p362/include'   -O3 -ggdb -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -L/home/igawa/.rbenv/versions/1.9.3-p362/lib -Wl,-R/home/igawa/.rbenv/versions/1.9.3-p362/lib -L. -L'/home/igawa/.rbenv/versions/1.9.3-p362/lib'  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/home/igawa/.rbenv/versions/1.9.3-p362/lib -L/home/igawa/.rbenv/versions/1.9.3-p362/lib -lruby-static -lpthread  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: 関数 ‘t’ 内:
+conftest.c:5:28: 警告: 変数 ‘p’ が設定されましたが使用されていません [-Wunused-but-set-variable]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+--------------------
+
