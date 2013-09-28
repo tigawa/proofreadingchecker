@@ -1,18 +1,17 @@
 class SentenceController < ApplicationController
-  def check
-
-  	@sentende = params[:sentence]
-
-  	p @sentende
-
-  	@results = Yahoo::Proofreading.make(@sentende).css("Result")
+  def index
+    @results = Array.new
+    respond_to do |format|
+      format.html # index.html.erb
+    end
   end
 
-  p "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-  p @results
-  p "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+  def check
+  	@sentende = params[:sentence]
+  	@results = Yahoo::Proofreading.make(@sentende).css("Result")
 
-  respond_to do |format|
-      format.html # new.html.erb
+    respond_to do |format|
+      format.html { render action: "index" }
+    end
   end
 end
