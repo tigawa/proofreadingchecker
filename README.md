@@ -5,4 +5,4 @@ proofreadingchecker
 
 
 ### WebアプリのURL
-http://proofreadingchecker.herokuapp.com/sentence/index
+http://proofreadingchecker.herokuapp.com
